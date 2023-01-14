@@ -1,4 +1,3 @@
-
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -14,17 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 20);
-            $table->string('comment', 200);
-            $table->foreignId('user_id', 200)->constrained('users');
-            $table->boolean('handmake');
-            $table->string('price');
-            $table->string('age');
-            $table->string('relationship');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -35,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('images');
     }
 };
