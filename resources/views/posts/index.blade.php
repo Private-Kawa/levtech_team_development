@@ -22,19 +22,12 @@
           <div class="py-10 mx-auto">
                 <div class="flex flex-wrap flex-col md:flex-row gap-3">
                     @foreach ($posts as $post)
-                        <!--<div style='border:solid 1px; margin-bottom: 10px;'>-->
-                        <!--    <p>-->
-                        <!--        タイトル：<a href="/posts/{{ $post->id }}">{{ $post->title }}</a>-->
-                        <!--    </p>-->
-                        <!--    <p>カテゴリー：<a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a></p>-->
-                        <!--</div>-->
+                    
                         <div class="flex-1">
                             <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                               <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://dummyimage.com/720x400" alt="blog">
                               <div class="p-6">
-                                <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-                                  <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
-                                </h2>
+                                
                                 <h3 class="title-font text-lg font-medium text-gray-900 mb-3"><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h3>
                                 <p class="leading-relaxed mb-3">内容が入ります。内容が入ります。内容が入ります。内容が入ります。</p>
                                 <div class="flex items-center flex-wrap justify-between">

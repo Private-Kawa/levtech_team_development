@@ -1,5 +1,4 @@
-
- <x-app-layout>
+<x-app-layout>
     <x-slot name="header">
         chocolate
     </x-slot>
@@ -9,7 +8,6 @@
         <div>
             <p>タイトル：{{ $post->title }}</p>
             <p>本文：{{ $post->body }}</p>
-            <p>カテゴリー：<a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a></p>
         </div>
         <div>
             <p class="edit">[<a href="/posts/{{ $post->id }}/edit">編集</a>]</p>
@@ -17,7 +15,5 @@
         </div>
     </body>
 
-     
-    </x-slot>
-    </x-app-layout>
+</x-app-layout>
 

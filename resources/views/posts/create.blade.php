@@ -38,8 +38,8 @@
         <div class="mb-6">
             <label class="text-orange-600" for="type" class="block mb-2 text-sm font-medium text-gray-900">手作り or 購入</label>
             <select name="post[handmake]" class="block appearance-none bg-white border border-gray-300 hover:border-gray-500 px-2 py-2 pr-8 rounded shadow leading-tight">
-                <option value="true">手作り</option>
-                <option value="false">購入</option>
+                <option value=1>手作り</option>
+                <option value=0>購入</option>
             </select>
         </div>
         <div class="mb-6">
@@ -80,7 +80,7 @@
         </div>
         <div class="mb-6">
             <label class="block mb-2 text-sm font-medium text-gray-900 text-orange-600" for="file_input">画像</label>
-            <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 " id="file_input" name="post[image_url]" type="file">
+            <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 " id="file_input" name="image" type="file">
         </div>
         <button class="text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center shadow">
             <input type="submit" value="投稿"/>
