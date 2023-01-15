@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
 use Cloudinary;
+use Illuminate\Support\Facades\Auth;
+
 
 class PostController extends Controller
 {
@@ -33,6 +35,7 @@ class PostController extends Controller
         $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
         $input += ['image_url' => $image_url]; 
         }
+       $input += ['user_id'=> Auth::id()];
         $post->fill($input)->save();
         return redirect('/posts/' . $post->id);
     }
