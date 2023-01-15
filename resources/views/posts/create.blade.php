@@ -29,55 +29,62 @@
     <!--        <a class="text-" href="/">キャンセル</a>-->
     <!--    </div>-->
     <!--</form>-->
-    <form>
+    <form class="mt-4" action="/posts" method="POST" enctype="multipart/form-data">
+        @csrf
         <div class="mb-6">
             <label class="text-orange-600" for="name" class="block mb-2 text-sm font-medium text-gray-900">チョコレートの名前</label>
-            <input type="text" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg shadow focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="" required>
+            <input type="text" id="name" name="post[title]" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg shadow focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="" required>
         </div>
         <div class="mb-6">
             <label class="text-orange-600" for="type" class="block mb-2 text-sm font-medium text-gray-900">手作り or 購入</label>
-            <select class="block appearance-none bg-white border border-gray-300 hover:border-gray-500 px-2 py-2 pr-8 rounded shadow leading-tight">
-                <option>手作り</option>
-                <option>購入</option>
+            <select name="post[handmake]" class="block appearance-none bg-white border border-gray-300 hover:border-gray-500 px-2 py-2 pr-8 rounded shadow leading-tight">
+                <option value=1>手作り</option>
+                <option value=0>購入</option>
             </select>
         </div>
         <div class="mb-6">
             <label class="text-orange-600" for="type_price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">費用</label>
-            <select id="type_price" class="block appearance-none bg-white border border-gray-300 hover:border-gray-500 px-2 py-2 pr-8 rounded shadow leading-tight">
-                <option>1000円以下</option>
-                <option>1001円～3000円</option>
-                <option>3001円～5000円</option>
-                <option>5000円以上</option>
+            <select name="post[price]" id="type_price" class="block appearance-none bg-white border border-gray-300 hover:border-gray-500 px-2 py-2 pr-8 rounded shadow leading-tight">
+                <option value="1000円以下">1000円以下</option>
+                <option value="1001円～3000円">1001円～3000円</option>
+                <option value="3001円～5000円">3001円～5000円</option>
+                <option value="5000円以上">5000円以上</option>
             </select>
         </div>
         <div class="mb-6">
             <label class="text-orange-600" for="type_age" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">渡す相手の年齢層</label>
-            <select id="type_age" class="block appearance-none bg-white border border-gray-300 hover:border-gray-500 px-2 py-2 pr-8 rounded shadow leading-tight">
-                <option>18歳未満</option>
-                <option>18歳～22歳</option>
-                <option>23歳～29歳</option>
-                <option>23歳～29歳</option>
-                <option>30歳～39歳</option>
-                <option>40歳以上</option>
+            <select name="post[age]" id="type_age" class="block appearance-none bg-white border border-gray-300 hover:border-gray-500 px-2 py-2 pr-8 rounded shadow leading-tight">
+                <option value="18歳未満">18歳未満</option>
+                <option value="18歳～22歳">18歳～22歳</option>
+                <option value="23歳～29歳">23歳～29歳</option>
+                <option value="23歳～29歳">23歳～29歳</option>
+                <option value="30歳～39歳">30歳～39歳</option>
+                <option value="40歳以上">40歳以上</option>
             </select>
         </div>
         <div class="mb-6">
-            <label class="text-orange-600" for="type_person" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">渡す相手との関係</label>
-            <select id="type_person" class="block appearance-none bg-white border border-gray-300 hover:border-gray-500 px-2 py-2 pr-8 rounded shadow leading-tight">
-                <option>恋人</option>
-                <option>友達</option>
-                <option>片思い</option>
-                <option>家族</option>
-                <option>同僚</option>
-                <option>友達</option>
-                <option>上司</option>
+            <label class="text-orange-600" for="type_relationship" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">渡す相手との関係</label>
+            <select name="post[relationship]" id="type_relationship" class="block appearance-none bg-white border border-gray-300 hover:border-gray-500 px-2 py-2 pr-8 rounded shadow leading-tight">
+                <option value="恋人">恋人</option>
+                <option value="友達">友達</option>
+                <option value="片思い">片思い</option>
+                <option value="家族">家族</option>
+                <option value="同僚">同僚</option>
+                <option value="友達">友達</option>
+                <option value="上司">上司</option>
             </select>
         </div>
         <div class="mb-6">
             <label class="text-orange-600" for="comment" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">コメント</label>
-            <textarea id="comment" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg shadow focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="message" placeholder="コメントを入力"></textarea>
+            <textarea id="comment" name="post[comment]" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg shadow focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="message" placeholder="コメントを入力"></textarea>
         </div>
-        <button type="submit" class="text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center shadow">登録</button>
+        <div class="mb-6">
+            <label class="block mb-2 text-sm font-medium text-gray-900 text-orange-600" for="file_input">画像</label>
+            <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 " id="file_input" name="image" type="file">
+        </div>
+        <button class="text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center shadow">
+            <input type="submit" value="投稿"/>
+        </button>
         <button class="font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center shadow">
             <a href="/">キャンセル</a>
         </button>
