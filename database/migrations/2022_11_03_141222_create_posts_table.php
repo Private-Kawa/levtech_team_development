@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('comment', 200);
             $table->foreignId('user_id', 200)->constrained('users');
             $table->boolean('handmake');
+            $table->string('image_url')->nullable(); //画像投稿しなくてもおk「
             $table->string('price');
             $table->string('age');
             $table->string('relationship');
