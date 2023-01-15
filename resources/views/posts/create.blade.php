@@ -77,6 +77,10 @@
             <label class="text-orange-600" for="comment" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">コメント</label>
             <textarea id="comment" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg shadow focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="message" placeholder="コメントを入力"></textarea>
         </div>
+        <div class="mb-6">
+            <label class="block mb-2 text-sm font-medium text-gray-900 text-orange-600" for="file_input">画像</label>
+            <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 " id="file_input" type="file">
+        </div>
         <button type="submit" class="text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center shadow">登録</button>
         <button class="font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center shadow">
             <a href="/">キャンセル</a>
