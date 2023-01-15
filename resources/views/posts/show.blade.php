@@ -1,5 +1,4 @@
-
- <x-app-layout>
+<x-app-layout>
     <x-slot name="header">
         chocolate
     </x-slot>
@@ -16,7 +15,5 @@
         </div>
     </body>
 
-     
-    </x-slot>
-    </x-app-layout>
+</x-app-layout>
 
