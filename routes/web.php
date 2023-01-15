@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
-
+use App\Http\Controllers\LikeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +14,7 @@ use App\Http\Controllers\PostController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 
 
 
@@ -33,6 +34,14 @@ Route::middleware('auth')->group(function () {
     Route::delete('/posts/{post}',  [PostController::class, 'delete']);
     Route::get('/posts/{post}/edit',  [PostController::class, 'edit']);
     Route::get('/categories/{category}', [CategoryController::class,'index']);
+    Route::post('/like/{postId}',[LikeController::class,'store']);
+    Route::post('/unlike/{postId}',[LikeController::class,'destroy']);
+    Route::get('/test', [LikeController::class, 'index']);
+    //テスト用ルーティング
+
+
 });
+
+
 
 require __DIR__.'/auth.php';
