@@ -14,30 +14,36 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
+        <div class="bg-gray-100">
             @include('layouts.navigation')
 
             <!-- Page Heading -->
             @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <header>
+                    <div class="container max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex items-center justify-between">
                         {{ $header }}
-                        konnnitiahs
                     </div>
                 </header>
             @endif
 
             <!-- Page Content -->
-            <main>
+            <main class="container mx-auto px-4 max-w-7xl sm:px-6 lg:px-8 min-h-screen ">
                 
                 {{ $slot }}
                 
             </main>
-            @if(isset($footer))
-            <footer>
-                {{$footer}}
+            <footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
+                <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 おあとがよろしいようで All Rights Reserved.
+                </span>
+                <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+                    <li>
+                        <a href="/" class="mr-4 pb-4 hover:underline md:mr-6 ">Home</a>
+                    </li>
+                    <li>
+                        <a href="/posts/create" class="mr-4 hover:underline md:mr-6">新規追加</a>
+                    </li>
+                </ul>
             </footer>
-            @endif
         </div>
     </body>
 </html>
