@@ -18,6 +18,9 @@
                     <x-nav-link :href="route('/')" :active="request()->routeIs('/')">
                         Home
                     </x-nav-link>
+                    <x-nav-link :href="route('/posts/create')" :active="request()->routeIs('/posts/create')">
+                        新規追加
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -75,6 +78,9 @@
             <!--</x-responsive-nav-link>-->
             <x-responsive-nav-link :href="route('/')" :active="request()->routeIs('/')">
                 Home
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('/posts/create')" :active="request()->routeIs('/posts/create')">
+                新規追加
             </x-responsive-nav-link>
         </div>
 
