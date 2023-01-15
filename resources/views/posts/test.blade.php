@@ -8,7 +8,7 @@
     </head>
     <body>
         
-        
+
     <!--likeのテスト　-->
      @foreach ($posts as $post)
             
@@ -56,6 +56,7 @@
        
      
      
+
      
      
         

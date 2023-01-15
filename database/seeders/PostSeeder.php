@@ -18,7 +18,7 @@ class PostSeeder extends Seeder
     {
         DB::table('posts')->insert([
             'title' => 'チーム開発会って？',
-            'comment' => 'チョコを作りました',
+            'comment' => 'チョコを作りました猫',
             'user_id' => '1',
             'handmake'=> "0",
             'price'=> "1000円未満",

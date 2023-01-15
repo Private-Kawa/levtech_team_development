@@ -3,7 +3,12 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+
+use App\Http\Controllers\SerchController;
+
+
 use App\Http\Controllers\LikeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +19,8 @@ use App\Http\Controllers\LikeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/test', [SerchController::class, 'serch']);
+//検索機能テスト用ルーティング
 
 
 
@@ -45,3 +51,5 @@ Route::middleware('auth')->group(function () {
 
 
 require __DIR__.'/auth.php';
+
+
