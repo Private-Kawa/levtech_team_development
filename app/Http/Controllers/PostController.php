@@ -42,6 +42,7 @@ class PostController extends Controller
 
     public function edit(Post $post)
     {
+        // dd($post);
         return view('posts/edit')->with(['post' => $post]);
     }
 
